@@ -187,48 +187,6 @@ All clients will see the same screen and can all control the server simultaneous
 - Image scaling: Maintains aspect ratio while scaling to window size
 - Coordinate transformation: Maps client coordinates to server coordinates
 
-## Troubleshooting
-
-### Server Issues
-
-**Problem**: Server fails to start
-- **Solution**: Ensure port 5900 is not already in use
-- **Solution**: Check that you have screen capture permissions (required on macOS)
-
-**Problem**: No clients can connect
-- **Solution**: Check firewall settings, ensure port 5900 is open
-- **Solution**: Verify server is running and listening
-
-### Client Issues
-
-**Problem**: Cannot connect to server
-- **Solution**: Verify server address and network connectivity
-- **Solution**: Check firewall rules on both client and server
-- **Solution**: Ensure server is running before starting client
-
-**Problem**: Keyboard input not working
-- **Solution**: Click the client window to ensure keyboard focus
-- **Solution**: Check that the client window is the active window
-
-**Problem**: Mouse coordinates seem off
-- **Solution**: This may occur if screen scaling is incorrect; restart the client
-
-**Problem**: Low frame rate
-- **Solution**: Check network bandwidth between client and server
-- **Solution**: Adjust JPEG_QUALITY constant (lower = smaller files, faster transfer)
-- **Solution**: Adjust SCREEN_CAPTURE_FPS constant (lower = less bandwidth)
-
-### Performance Tuning
-
-To adjust performance:
-
-1. **Lower bandwidth usage**: Decrease JPEG_QUALITY (25-40)
-2. **Higher quality**: Increase JPEG_QUALITY (60-80)
-3. **Lower latency**: Decrease SCREEN_CAPTURE_FPS (5-8)
-4. **Smoother updates**: Increase SCREEN_CAPTURE_FPS (15-20)
-
-Edit the constants in `RemoteDesktopServer.java` and recompile.
-
 ## Network Configuration
 
 ### Local Network
@@ -236,25 +194,10 @@ Edit the constants in `RemoteDesktopServer.java` and recompile.
 - Use the server's local IP address (e.g., 192.168.1.100)
 - Check firewall rules on both machines
 
-### Internet (Advanced)
+### Internet (Advanced) - For Future
 - Set up port forwarding on the server's router (port 5900)
 - Use the server's public IP address
 - Consider security implications (encryption not implemented)
-
-## Security Considerations
-
-This is an educational implementation and does **not** include:
-- Authentication
-- Encryption
-- Access control
-
-**Do not use over untrusted networks without additional security measures.**
-
-For production use, consider:
-- Adding SSL/TLS encryption
-- Implementing user authentication
-- Using a VPN or SSH tunnel
-- Restricting access by IP address
 
 ## Limitations
 
@@ -279,17 +222,11 @@ Performance over network depends on:
 - Screen content (static vs. dynamic)
 - Number of connected clients
 
-## License
-
-This is an educational project created for a network architecture class.
-
-## Author
-
-Created as a demonstration of client-server architecture, network protocols, and remote desktop technology in Java.
 
 ## Acknowledgments
 
 - Uses Java AWT Robot for screen capture and input control
 - Uses Java Swing for GUI
 - JPEG compression via ImageIO
-# Remote-Desktop
+
+## AI was used for documentation and research.
